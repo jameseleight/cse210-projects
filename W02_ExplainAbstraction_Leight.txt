@@ -1,0 +1,28 @@
+W02 Assignment:  Explain Abstraction, James Leight, CSE210
+
+What is abstraction and why is it important?
+
+Abstraction is a method used in software developemnt to break down a complex idea - here a function or goal of the program - into smaller ideas - here lower level and simpler functions that build up to accomplish the larger function.  In order to be effective, Abstraction needs to have a clear framework so that it is clear and consice.  In the use of classes to handle and process data this is defined as having a state which is specifically defined as attributes which are variables in the class that hold individual and specific data items and values AND having behaviors which is specifically defined as methods which are actions on the data in the attributes.
+
+A benefit of abstraction is that it helps in the software development process by breaking down the problems into managable pieces.  This limits the scope to specific pieces of data and methods that are meaningful to accomplishing the responsibility or purpose of the data structure and actions on the items in that data structure.  When the problem is broken down our puny brains can work with it and not get confused or frozen and we can accomplish the goal of our software development effort.
+
+An application of abstraction is in the journal project that we are working on and starting this week.  There are many features and actions and different items of data to store and process in this application.  If we were to think about them all together, it will be confusing and we are more likely to make logic errors or get stalled and locked up in working through the development process to complete the code.  So we take one item in the journal application such as loading the journal entries completed so far.  One attribute of this class/object is the filename of the journal archive.  Another attribute could be a default filename that allows the user to not have to type the filename each day/time the journal program is run.  Another attribute is the file location - perhaps a web location in the github repository.  And finally a default file location.  With these four attributes, there can be behaviors for this loading class one of which is to load the file into a declared variable such as a list or array.  Another behavior is to copy the file to another location.  Another behavior is to backup the file.  These behaviors are limited to those that relate only to the responsibility of the class which is scoped around loadign the file.
+
+Here is an example of some lines of code I wrote for the Excercise this week for the Resume class
+    public string _name;
+    public List<Job> _jobs = new List<Job>();
+
+These are declarations for two attributes of the class.  Those attributes are _name and _jobs.  The store relevant data for the responsibility of the class.  SInce this class uses another class called Job, the principle of abstraction is applied.
+The method for this class is given by the following code.
+public void Display()
+    {
+        Console.WriteLine($"Name: {_name}");
+        Console.WriteLine("Jobs:");
+        foreach (Job j in _jobs)
+        {
+            j.Display();
+        }
+    }
+
+This behavior is basically a function definition that does actions on the data.  In particular, it displays the attributes to the Console/Terminal.  The behavior is specific and doesn't do anything else.  Although other behaviors could be added to do things like capitalize the _name value, etc.
+
