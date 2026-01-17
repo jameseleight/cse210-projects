@@ -1,7 +1,7 @@
 using System;
 public class Journal
 {
-    public List<Entry> _journal = new List<Entry>();
+    public List<Entry> _entries = new List<Entry>();
     public void AddEntry()
     {
         // Declare DateTime class and generate date string in format of mm/dd/yyyy
@@ -27,16 +27,23 @@ public class Journal
         entry1._entryText = response;
 
         // Add entry to journal list
-        _journal.Add(entry1);
+        _entries.Add(entry1);
     }
-
     public void DisplayAll()
     {
         Console.WriteLine("The Journal entries are the following:");
         Console.WriteLine();
-        foreach (Entry entryitem in _journal)
+        foreach (Entry entryitem in _entries)
         {
             entryitem.Display();
         }
+    }
+    public void SaveToFile()
+    {
+        
+    }
+    public void LoadFromFile()
+    {
+        
     }
 }
