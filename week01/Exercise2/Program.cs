@@ -41,7 +41,7 @@ class Program
             {
                 plusMinus = "+";
             }
-            else if (gradeOnesDigit < 3)
+            else if (gradeOnesDigit < 3 && gradePercent != 100)
             {
                 plusMinus = "-";
             }
