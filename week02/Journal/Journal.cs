@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.IO.Enumeration;
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
@@ -40,10 +42,77 @@ public class Journal
     }
     public void SaveToFile()
     {
-        
+        string journalFileName = "";
+        Console.Write($"Enter a new filename to save the journal (hit enter for default = MyJournal.txt) ");
+        string answer = Console.ReadLine();
+        if (answer == "")
+        {
+            journalFileName = "MyJournal.txt";
+        }
+        else
+        {
+            journalFileName = answer;
+        }
+        using (StreamWriter outputFile = new StreamWriter(journalFileName))
+        {
+            foreach (Entry entryitem in _entries)
+            {
+                outputFile.WriteLine(entryitem._date);
+                outputFile.WriteLine(entryitem._promptText);
+                outputFile.WriteLine(entryitem._entryText);
+                outputFile.WriteLine();
+            }
+        }
+        Console.WriteLine($"The Journal was written to {journalFileName}.");
+        Console.WriteLine();
     }
     public void LoadFromFile()
     {
-        
+        // Declare Entry class and set attributes of entry variable to values collected above
+        string fileName = "";
+        int index = 0;
+        Console.Write("Enter a filename to load (hit Enter for default = MyJournal.txt) ");
+        string answer = Console.ReadLine();
+        if (answer == "")
+        {
+            fileName = "MyJournal.txt";
+        }
+        else
+        {
+            fileName = answer;
+        }
+        Entry entry1 = new Entry();
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+        foreach (string line in lines)
+        {
+            if (index == 0)
+            {
+                entry1._date = line;
+                index++;
+            }
+            else if (index == 1)
+            {
+                entry1._promptText = line;
+                index++;
+            }
+            else if (index == 2)
+            {
+                entry1._entryText = line;
+                index++;
+            }
+            else // index == 3 and the line is a blank
+            {
+                entry1.Display();
+                _entries.Add(entry1);
+                index = 0;
+                entry1 = new Entry();
+                foreach (Entry entryitem in _entries)
+                {
+                    entryitem.Display();
+                }
+            }
+        }
+        Console.WriteLine($"The Journal was read from {fileName}.");
+        Console.WriteLine();
     }
 }

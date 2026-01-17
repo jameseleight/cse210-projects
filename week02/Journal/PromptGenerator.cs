@@ -19,7 +19,6 @@ public class PromptGenerator
     }
     public void DisplayPrompts()
     {
-        Console.WriteLine();
         Console.WriteLine("The current stored prompts are the following:");
         int index = 0;
         foreach (string item in _prompt)
@@ -27,5 +26,6 @@ public class PromptGenerator
             Console.WriteLine($"Index: {index}, Prompt: {item}");
             index++;
         }
+        Console.WriteLine();
     }
 }
