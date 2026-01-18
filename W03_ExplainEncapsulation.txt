@@ -1,0 +1,22 @@
+W03 Assignment:  Explain Encapsulation, James Leight, CSE210
+
+The principle of encapsulation is that classes are defined in a manner that changes can be made to the methods in the class and it is not necessary to change code outside the class.  The implementaiton of encapsulation in a class is that the attributes (internal variables) are made private so that they are not accessible outside the code file for the class.  Also that the methods or the actions or functions of the class containt the code that writes or reads or uses the attributes.  A middle rode is the defintion of methods/functions that get the value from an attribute or set a value of an attribute.
+
+A benefit of abstraction is that when the class methods are updated - which alwyas happens as a result of refining or updating or improving of expanding the code of the class - then the developer doesn't have to go and find all of the code in the Program class that needs to be updated.  Finding the impacted code is a challenge and then changing the code is a lot of work that can be avoided.  Finding may not be a big deal when the code is short, but for large code files with many classes there is greater likelihood of missing impacts and resulting logic errors.
+
+An example of encapsulation is based on the code developed for Fractions this week.
+
+public class Fraction
+{
+    //Attributes
+    private int _top;
+    private int _bottom;
+    ...
+
+The attributes are private so that they are not accessed by using code such as variable._top or variable._bottom.  They are only used by writing code using the methods.
+
+So as an example, let's say you wanted to update the code to add a multiplier on the top and bottom.  Instead of changing the existing getters and setters, you can add an attribute for the multiplication factor - such as say 5.  So for an example where the fraction is constructed as 3/7 you can add a method for seeting the multiplier to 5.  In the internal method, you can change the code to use the multiplication factor of 1 as a default so if the multiplier is never set you just get what you had before.  If you set the multiplier to 5, when you display the result you get the following:
+
+    private int _multiplier;
+
+15/35
