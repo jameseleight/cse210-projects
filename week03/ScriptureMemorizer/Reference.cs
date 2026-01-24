@@ -24,6 +24,15 @@ public class Reference
     {
         // This method is to generate the dispaly text which is the book followed by space, the chapter followed by :,
         //  the verse (space is before first word). and if there is an end verse the end verse value preceeded by a -.
-        return "test display";
+        string referenceText;
+        if (_endVerse == -1)
+        {
+            referenceText = String.Concat(_book, " ", _chapter, ":", _verse);
+        }
+        else
+        {
+            referenceText = String.Concat(_book, " ", _chapter, ":", _verse,"-",_endVerse);
+        }
+        return referenceText;
     }
 }
