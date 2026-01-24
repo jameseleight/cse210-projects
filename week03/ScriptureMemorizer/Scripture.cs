@@ -19,7 +19,6 @@ public class Scripture
     }   
     public void HideRandomWords(int numberToHide)
     {
-        
         for (int i = 0; i < numberToHide; i++) // Hide a randomly selected word from among those still shown and repeat numberToHide times.
         {
             // Determine number of words that are still shown in the verse and the index for each remaining shown number
