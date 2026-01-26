@@ -11,7 +11,6 @@ class Program
         Journal activeJournal = new Journal();
         // List<Entry> readFileList = new List<Entry>();
         PromptGenerator promptPrint = new PromptGenerator();
-        string fileName = "";
         DisplayWelcome();
         string answer = "-1";
         while (answer != "6")

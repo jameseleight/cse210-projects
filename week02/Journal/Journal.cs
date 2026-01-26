@@ -69,7 +69,7 @@ public class Journal
     public void LoadFromFile()
     {
         // Declare Entry class and set attributes of entry variable to values collected above
-        string fileName = "";
+        string fileName;
         int index = 0;
         Console.Write("Enter a filename to load (hit Enter for default = MyJournal.txt) ");
         string answer = Console.ReadLine();
