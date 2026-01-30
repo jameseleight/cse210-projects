@@ -1,0 +1,70 @@
+James Leight
+Tad Johnson
+CSE210
+W04
+29 Jan 2026
+
+Project Design YouTube Video Program
+Class Diagram
+
+Video
+_title: string
+_author: string
+_length: int
+_comment:  List<Comment>
+
+LoadVideoInfo(title: string, author: string, length: int): void
+AddNewComment(newComment: Comment): void
+NumberOfComments(): int
+DisplayVideoInfo(number: int): string
+DisplayComments(): string
+
+Comment
+_name: string
+_text: string
+
+LoadCommentInfo(name: string, text: string): void
+DisplayCommentInfo(): string
+
+
+Project Design Online Ordering
+Class Diagram
+
+Product
+_name: string
+_id: string
+_price: float
+_quantity: int
+
+LoadProductInfo(name: string, id: string, price: float, quanitity: int): void
+TotalCost(): float
+DisplayNameID(): string
+
+Customer
+_name: string
+_address: Address
+
+LoadCustomerInfo(name: string, address: Address): void
+CustomerInUSA(): bool
+
+Address
+_street: string
+_city: string
+_state: string
+_postalCode: string
+_country: string
+
+LoadAddressInfo(street: string, city: string, state: string, postalCode: string, country: string): void
+InUSA(): bool
+DisplayAddress(): string
+
+Order
+_products: List<Product>
+_customer: Customer
+
+LoadCustomer(customer: Customer): void
+AddProduct(item: Product): void
+ShippingLabel(): string
+PackingLabel(): string
+ShippingCost(): float (might not be needed)
+TotalPrice(): string (could be a float if it is used elsewhere for compuations like adding tax; string if for display)
