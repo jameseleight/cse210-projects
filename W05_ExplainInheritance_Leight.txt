@@ -1,0 +1,26 @@
+W05 Assignment:  Explain Inheritance, James Leight, CSE210
+
+The coding concept of inheritance is that classes or objects can inherit or include the characteristics of other classes.  Characeristics specifically are attributes and methods.  More specifically, once a class has been defined with a set of attributes and methods including constructors and setters and getters, etc. then an additional class can be defined that includes all that form the parent class and can then define additional attributes and methods.  Another class can be created that inherits from the parent class and has its own additional unique attributes and methods.
+
+A benefit of inheritance is that code is not unnecesarily duplicated.  Inheritance means that a class doesn't have to include the specific attribute and method statements from the parent class.
+
+An application of inheritance is to build on common information with more detailed information.  For example a class Car can include attributes for general items like price, weight, length.  A class SportsCar can include all the attributes of Car and also things you care about for a sportscar like horsepower, tire width.  Another class LuxuryCar can inherit the attributes from Car but then have added items that you care about with a luxury car and not a spors car like interior, and color.  And so on.
+
+For this example, there is code for the class Car
+
+public class Car
+{
+    private string _price;
+    private string _weight;
+    private string _length;
+}
+
+Then the class SportsCar inherits Car and adds attributes
+
+public class SportsCar : Car
+{
+    private string _horesepower;
+    private string _tireWidth;
+}
+
+And the same for LuxuryCar.  Note that the methods have not been included but follow the same principle of inheritance.
