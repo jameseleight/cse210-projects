@@ -1,10 +1,16 @@
 using System;
 
+// exceed requirements:  I coded so that the prompts and questions are not repeated until all have been selected.
+// exceed requirements:  I keep track of the total accumulated time for each activity.
+
 class Program
 {
     static void Main(string[] args)
     {
         DisplayWelcome();
+        BreathingActivity activity1 = new BreathingActivity();
+        ListeningActivity activity2 = new ListeningActivity();
+        ReflectingActivity activity3 = new ReflectingActivity();
         string answer = "-1";
         while (answer != "4")
         {
@@ -12,15 +18,15 @@ class Program
             answer = PromptMenuChoice();
             if (answer == "1")
             {
-                //Load breathing activity, run breathing activity
+                activity1.Run();
             }
             else if (answer == "2")
             {
-                // load listening activity, run listening activity
+                activity2.Run();
             }
             else if (answer == "3")
             {
-                // load reflecting activity, run reflecting activity
+                activity3.Run();
             }
             else if (answer == "4")
             {
@@ -35,22 +41,25 @@ class Program
 
         static void DisplayWelcome()
         {
-            Console.WriteLine();
+            Console.Clear();
             Console.WriteLine("Welcome to the Mindfullness Program!");
+            Thread.Sleep(2000);
             Console.WriteLine();
         }        
         static void DisplayGoodbye()
         {
+            Console.Clear();
             Console.WriteLine("Thank you for running the Mindfullness Program.");
             Console.WriteLine();
         }  
         static void DisplayChoices()
         {
-            Console.WriteLine("Select an activity from the following list:");
-            Console.WriteLine("1) Breathing Activity.");
-            Console.WriteLine("2) Listening Activity.");
-            Console.WriteLine("3) Reflecting Activity.");
-            Console.WriteLine("4) Quit the Program.");
+            Console.Clear();
+            Console.WriteLine("Select from the Menu:");
+            Console.WriteLine("1) Start Breathing Activity");
+            Console.WriteLine("2) Start Listening Activity");
+            Console.WriteLine("3) Start Reflecting Activity");
+            Console.WriteLine("4) Quit the Program");
         }
 
         static string PromptMenuChoice()
