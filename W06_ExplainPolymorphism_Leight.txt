@@ -1,0 +1,26 @@
+W06 Assignment:  Explain Polymorphism, James Leight, CSE210
+
+Polymorphism is the coding technique where a parent class defines a method and that method is overridden and executed in a unique manner for each of many children classes inheriting that parent class.  The method executes a unique function depending on the context of which child class is tied to the method.  There are a few ways to architect this in a set of code one is to define a parent method and then override the method in some of the children;p another is to not define the method in the parent and leave it blank and then make sure to define it in each of the children classes.
+
+A benefit of Polymorphism is that the parent class can organize the structure of the categories of methods for all the possible children classes/objects.  This allows the interface to the category of classes to be cleanly defined so that code uses the category or group of classes in a discipliend and consistent manner that retains all the benefits of encpasulation.  Another benefit is that polymorphism allows flexibility to define specific unique children classes that implement a method commonly used by other children classes in a unique way.  It helps to keep the benefits of encapsulation in more unique coding circumstances.
+
+As an example of polymorphism different than those used in the activity or project.  Assume you have a parent class Car and two children classes GasCar and ElectricCar.  The calculation of miles per $ could be captured in a method CalculateMPD().  For a GasCar it would be miles / gallons of gas / dollars per gallon.  For an electric car it would be miles / duration of travel * duration of full charge / dollars per charge.  Both are calculations of efficiency of money spent to travel but they are calculated based on the category of Car.
+
+The key code words used are virtual or abstract in the parent class method and override in the child class method:
+// parent class
+public abstract class Car
+{
+    private float _miles;
+    public abstract CalculateMPD();
+}
+// child class
+public class GasCar : Car
+{
+    private _gallons
+    public override float CalculateMPD()
+    {
+        return _miles / _gallons;
+    }
+}
+
+The other child class ElectricCar would be implemented in the similar and appropriate manner to specifically define CalculateMPD()
