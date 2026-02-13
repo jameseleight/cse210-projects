@@ -4,13 +4,13 @@ using System.Runtime.CompilerServices;
 // This class includes a method to create a bool list of the specified value to mark which prompts or questions have been unused.
 public class Activity
 {
-    protected string _name;
-    protected string _description;
+    private string _name;
+    private string _description;
     protected int _duration;
-    public Activity()
+    public Activity(string name, string description)
     {
-        _name = "";
-        _description = "";
+        _name = name;
+        _description = description;
         _duration = 0;
     }
     public void DisplayStartingMessage()

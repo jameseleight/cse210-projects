@@ -5,11 +5,8 @@ public class ListeningActivity : Activity
     private List<string> _prompts = new List<string>();
     private List<bool> _promptsUnused = new List<bool>();
     private int _totalTime;
-    public ListeningActivity()
+    public ListeningActivity(string name, string description) : base(name, description)
     {
-        _name = "Listening";
-        _description = "This activity will help you reflect on the good things in your life "
-                        + "by having you list as many things as you can in a certain area.";
         _totalTime = 0;
         _prompts.Add("Who are people that you appreciate?");
         _prompts.Add("What are personal strengths of yours?");

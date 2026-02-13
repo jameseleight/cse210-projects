@@ -2,11 +2,8 @@ using System;
 public class BreathingActivity : Activity
 {
     private int _totalTime;
-    public BreathingActivity()
+    public BreathingActivity(string name, string description) : base(name, description)
     {
-        _name = "Breathing";
-        _description = "This activity will help you relax by walking your through breathing "
-                     + "in and out slowly. Clear your mind and focus on your breathing.";
         _totalTime = 0;
     }
     public void Run()
