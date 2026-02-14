@@ -13,8 +13,19 @@ public abstract class Goal
     public abstract bool IsComplete();
     public virtual string GetDetailsString()
     {
-        // think through if there are any common things for this method which will be overridden
-        return "test";
+        return $"{_shortName} ({_description})";
+    }
+    public string GetNameString()
+    {
+        return _shortName;
+    }
+    public virtual int GetPoints()
+    {
+        return _points;
+    }
+    public virtual void SetStatus(bool state, int value)
+    {
+        // this will be overridden as needed.  It is virtual so that a child class does not need to implement it if not needed.
     }
     public abstract string GetStringRepresentation();
 }

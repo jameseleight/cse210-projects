@@ -13,25 +13,39 @@ public class ChecklistGoal : Goal
     {
         // increment _amountCompleted
         _amountCompleted++;
-        // check to see if the target has been reached
-        // if not just add the points to the total.  if so, then also add the bonus points and change _isComplete to true  If there are more completions just add points
-        // Add the points for this goal to the total
-        // display to console "Congratulations! you have earned {_points} points"
-        // display to console "You now have {totalpoints} points.
     }
     public override bool IsComplete()
     {
-        // check if the target has been achived and if so then return true.  otherwise, return false.
-        return false;
+        if (_amountCompleted >= _target)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     public override string GetDetailsString()
     {
-        // return description
-        return _description;
+        return $"{_shortName} ({_description}) -- Currently completed: {_amountCompleted}/{_target}";
     }
     public override string GetStringRepresentation()
     {
-        // used to write to a file.
-        return "test";
+        return $"ChecklistGoal,,{_shortName},,{_description},,{_points},,{_target},,{_bonus},,{_amountCompleted}";
+    }
+    public override int GetPoints()
+    {
+        if (_amountCompleted == _target)
+        {
+            return _points + _bonus;
+        }
+        else
+        {
+            return _points;
+        }
+    }
+    public override void SetStatus(bool state, int value)
+    {
+        _amountCompleted = value;
     }
 }

@@ -1,3 +1,5 @@
+using System.Data;
+
 public class SimpleGoal : Goal
 {
     private bool _isComplete;
@@ -9,9 +11,6 @@ public class SimpleGoal : Goal
     {
         // change _isCompelte to true when called
         _isComplete = true;
-        // Add the points for this goal to the total
-        // display to console "Congratulations! you have earned {_points} points"
-        // display to console "You now have {totalpoints} points.
     }
     public override bool IsComplete()
     {
@@ -19,7 +18,10 @@ public class SimpleGoal : Goal
     }
     public override string GetStringRepresentation()
     {
-        // used to create a string to write to file
-        return "test";
+        return $"SimpleGoal,,{_shortName},,{_description},,{_points},,{IsComplete()}";
+    }
+    public override void SetStatus(bool state, int value)
+    {
+        _isComplete = state;
     }
 }

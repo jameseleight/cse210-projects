@@ -42,7 +42,6 @@ class Program
                 Console.WriteLine();
             }
         }
-
         static void DisplayWelcome()
         {
             Console.Clear();
@@ -65,7 +64,6 @@ class Program
             Console.WriteLine("3) Start Reflecting Activity");
             Console.WriteLine("4) Quit the Program");
         }
-
         static string PromptMenuChoice()
         {
             Console.Write("Selection (1-4): ");
