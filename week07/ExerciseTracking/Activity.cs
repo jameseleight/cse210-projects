@@ -1,6 +1,6 @@
 public abstract class Activity
 {
-    protected string _date;
+    private string _date;
     protected int _duration;
     public Activity(string date, int duration)
     {
